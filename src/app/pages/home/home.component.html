@@ -1,0 +1,62 @@
+
+
+<div class="w-[1440px] mx-auto py-[80px]">
+  <div class="flex flex-col gap-[40px] pb-[80px]">
+    <div class="flex justify-center">
+      <p class="text-[40px] font-[600] leading-[100%]">Kafedralar</p>
+    </div>
+    <div class="grid grid-cols-4 gap-[50px]">
+      @for(data of kafedra; track data.name){
+        <a [routerLink]="'/kafedra/' + data.id">
+          <div class="px-[20px] py-[40px] shadow-[0_0_5px_#00f] rounded-[16px] flex justify-center">
+            <p class="text-[32px] font-[400] leading-[100%]">{{data.name}}</p>
+          </div>
+        </a>
+      }
+    </div>
+    @if(kafedra.length > kafedraLen){
+      <div class="flex justify-center">
+        <button class="px-[20px] py-[16px] bg-[#76aff0] rounded-[16px] text-[#fff] text-[20px] cursor-pointer" (click)="kafedraLenChange()">Ko`pro ko`rish</button>
+      </div>
+    }
+  </div>
+
+  <div class="flex flex-col gap-[40px] pb-[80px]">
+    <div class="flex justify-center">
+      <p class="text-[40px] font-[600] leading-[100%]">O`qtuvchilar</p>
+    </div>
+    <div class="grid grid-cols-4 gap-[50px]">
+      @for(teacher of teachers; track teacher.id; let i = $index){
+        @if(teacherLen > i){
+          <app-teacher [teacher]="teacher"></app-teacher>
+        }
+      }
+    </div>
+    @if(teachers.length > teacherLen){
+      <div class="flex justify-center">
+        <button class="px-[20px] py-[16px] bg-[#76aff0] rounded-[16px] text-[#fff] text-[20px] cursor-pointer" (click)="teacherLenChange()">Ko`pro ko`rish</button>
+      </div>
+    }
+  </div>
+
+  <div class="flex flex-col gap-[40px] pb-[80px]">
+    <div class="flex justify-center">
+      <p class="text-[40px] font-[600] leading-[100%]">Fanlar</p>
+    </div>
+    <div class="grid grid-cols-4 gap-[50px]">
+      @for(subject of subjects; track subject.id; let i = $index){
+        @if(subjectLen > i){
+          <div class="px-[20px] py-[40px] shadow-[0_0_5px_#00f] rounded-[16px] flex flex-col items-center justify-center gap-[16px]">
+            <p class="text-[32px] font-[400] leading-[100%]">{{subject.name}}</p>
+            <p class="text-[22px] font-[400] leading-[100%] text-[#555555]">{{subject.type}}</p>
+          </div>
+        }
+      }
+    </div>
+    @if(subjects.length > subjectLen){
+      <div class="flex justify-center">
+        <button class="px-[20px] py-[16px] bg-[#76aff0] rounded-[16px] text-[#fff] text-[20px] cursor-pointer" (click)="subjectLenChange()">Ko`pro ko`rish</button>
+      </div>
+    }
+  </div>
+</div>

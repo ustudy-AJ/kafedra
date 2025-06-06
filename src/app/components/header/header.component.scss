@@ -1,0 +1,14 @@
+:host ::ng-deep .p-select {
+  border-radius: 12px;
+  align-items: center;
+}
+:host ::ng-deep .p-select-dropdown {
+  width: auto;
+  padding-right: 12px;
+}
+:host ::ng-deep .p-select-open {
+  border: 1px solid #1C79C0 !important;
+}
+:host ::ng-deep .p-focus {
+  border: 1px solid #1C79C0 !important;
+}

@@ -1,0 +1,102 @@
+@if(subject){
+  <div class="w-[1440px] mx-auto py-[80px] space-y-8">
+    <h3 class="text-4xl font-bold text-gray-800">{{subject.name}}</h3>
+
+    <!-- Инфо-блоки -->
+    <div class="grid grid-cols-3 gap-6">
+      <div class="bg-gray-50 p-4 rounded-lg shadow">
+        <p class="text-sm text-gray-500">Talim yo'nalishi:</p>
+        <p class="text-base font-medium text-gray-800">{{subject.type}}</p>
+      </div>
+      <div class="bg-gray-50 p-4 rounded-lg shadow">
+        <p class="text-sm text-gray-500">Tarkib turi:</p>
+        <p class="text-base font-medium text-gray-800">{{subject.type}}</p>
+      </div>
+      <div class="bg-gray-50 p-4 rounded-lg shadow">
+        <p class="text-sm text-gray-500">Soat:</p>
+        <p class="text-base font-medium text-gray-800">{{subject.longTime}}</p>
+      </div>
+    </div>
+
+    <div>
+      <p class="text-xl font-bold text-center p-4">Qo`shimchalar</p>
+      <table class="min-w-full divide-y divide-gray-200 rounded-lg shadow overflow-hidden">
+        <thead class="bg-gray-100">
+          <tr>
+            <th class="px-4 py-2 text-left text-sm font-semibold text-gray-700">#</th>
+            <th class="px-4 py-2 text-left text-sm font-semibold text-gray-700">Qoshimchalar nomi</th>
+            <th class="px-4 py-2 text-left text-sm font-semibold text-gray-700">Asos nomi</th>
+            <th class="px-4 py-2 text-left text-sm font-semibold text-gray-700">Asos file</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-200 bg-white">
+          <tr>
+            <td class="px-4 py-2 text-sm text-gray-800">1</td>
+            <td class="px-4 py-2 text-sm text-gray-800">Bir narsa</td>
+            <td class="px-4 py-2 text-sm text-gray-800">Bir narsa </td>
+            <td class="px-4 py-2 text-sm text-gray-800">file</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-2 text-sm text-gray-800">2</td>
+            <td class="px-4 py-2 text-sm text-gray-800">Bir narsa</td>
+            <td class="px-4 py-2 text-sm text-gray-800">Bir narsa </td>
+            <td class="px-4 py-2 text-sm text-gray-800">file</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-2 text-sm text-gray-800">3</td>
+            <td class="px-4 py-2 text-sm text-gray-800">Bir narsa</td>
+            <td class="px-4 py-2 text-sm text-gray-800">Bir narsa </td>
+            <td class="px-4 py-2 text-sm text-gray-800">file</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-2 text-sm text-gray-800">4</td>
+            <td class="px-4 py-2 text-sm text-gray-800">Bir narsa</td>
+            <td class="px-4 py-2 text-sm text-gray-800">Bir narsa </td>
+            <td class="px-4 py-2 text-sm text-gray-800">file</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+    <div>
+      <p class="text-xl font-bold text-center p-4">Mavzular</p>
+      <table class="min-w-full divide-y divide-gray-200 rounded-lg shadow overflow-hidden">
+        <thead class="bg-gray-100">
+          <tr>
+            <th class="px-4 py-2 text-left text-sm font-semibold text-gray-700">#</th>
+            <th class="px-4 py-2 text-left text-sm font-semibold text-gray-700">Mavzu</th>
+            <th class="px-4 py-2 text-left text-sm font-semibold text-gray-700">Mavzu tili</th>
+            <th class="px-4 py-2 text-left text-sm font-semibold text-gray-700">Asos file</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-200 bg-white">
+          <tr>
+            <td class="px-4 py-2 text-sm text-gray-800">1</td>
+            <td class="px-4 py-2 text-sm text-gray-800">Bir narsa</td>
+            <td class="px-4 py-2 text-sm text-gray-800">O`zbecha </td>
+            <td class="px-4 py-2 text-sm text-gray-800">file</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-2 text-sm text-gray-800">2</td>
+            <td class="px-4 py-2 text-sm text-gray-800">Bir narsa</td>
+            <td class="px-4 py-2 text-sm text-gray-800">Ruscha </td>
+            <td class="px-4 py-2 text-sm text-gray-800">file</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-2 text-sm text-gray-800">3</td>
+            <td class="px-4 py-2 text-sm text-gray-800">Bir narsa</td>
+            <td class="px-4 py-2 text-sm text-gray-800">O`zbecha </td>
+            <td class="px-4 py-2 text-sm text-gray-800">file</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-2 text-sm text-gray-800">4</td>
+            <td class="px-4 py-2 text-sm text-gray-800">Bir narsa</td>
+            <td class="px-4 py-2 text-sm text-gray-800">Ruscha</td>
+            <td class="px-4 py-2 text-sm text-gray-800">file</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+}

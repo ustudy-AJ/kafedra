@@ -1,0 +1,35 @@
+
+@if(kafedra){
+  <div class="w-[1440px] mx-auto py-[80px]">
+    <div class="flex justify-center py-[40px]">
+      <h3 class="text-[40px] font-[600] leading-[100%]">{{kafedra.name}}</h3>
+    </div>
+    <div class="flex flex-col gap-[40px] pb-[80px]">
+      <div class="">
+        <p class="text-[30px] font-[600] leading-[100%]">O`qtuvchilar</p>
+      </div>
+      <div class="grid grid-cols-4 gap-[50px]">
+        @for(teacher of kafedra.teachers; track teacher.id){
+          <app-teacher [teacher]="teacher"></app-teacher>
+        }
+      </div>
+    </div>
+
+    <div class="flex flex-col gap-[40px]">
+      <div class="">
+        <p class="text-[30px] font-[600] leading-[100%]">Fanlar</p>
+      </div>
+      <div class="grid grid-cols-4 gap-[50px]">
+        @for(subject of kafedra.subjects; track subject.id){
+          <a [routerLink]="'/subject/' + subject.id">
+            <div class="px-[20px] py-[40px] shadow-[0_0_5px_#00f] rounded-[16px] flex flex-col items-center justify-center gap-[16px]">
+              <p class="text-[32px] font-[400] leading-[100%]">{{subject.name}}</p>
+              <p class="text-[22px] font-[400] leading-[100%] text-[#555555]">{{subject.type}}</p>
+            </div>
+          </a>
+        }
+      </div>
+    </div>
+  </div>
+}
+
