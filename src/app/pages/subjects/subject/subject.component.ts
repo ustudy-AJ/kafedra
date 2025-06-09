@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ISubject, SubjectData } from '../../mock-data/subject.mock';
+import { ISubject, SubjectData } from '../../../mock-data/subject.mock';
 
 @Component({
   selector: 'app-subject',

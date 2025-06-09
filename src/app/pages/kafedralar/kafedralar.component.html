@@ -1,0 +1,38 @@
+<div class="w-[1640px] mx-auto py-[120px]">
+  <div class="">
+    <h3 class="text-[40px] font-[600] text-center">Kafedralar</h3>
+  </div>
+
+
+  <div class="overflow-x-auto rounded-xl shadow-md mt-6">
+    <table class="min-w-full text-left text-sm text-gray-700">
+      <thead class="bg-gray-100 text-xs uppercase text-gray-500">
+        <tr>
+          <th class="px-6 py-3">ID</th>
+          <th class="px-6 py-3">Name</th>
+          <th class="px-6 py-3 text-center">Actions</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-gray-200">
+        <tr *ngFor="let kafedra of kafedras" class="hover:bg-gray-50">
+          <td class="px-6 py-4">{{ kafedra.id }}</td>
+          <td class="px-6 py-4">{{ kafedra.name }}</td>
+          <td class="px-6 py-4 flex justify-center gap-2">
+            <button
+              class="px-3 py-1 text-xs text-white bg-blue-500 rounded hover:bg-blue-600"
+              (click)="editKafedra(kafedra)"
+            >
+              Edit
+            </button>
+            <button
+              class="px-3 py-1 text-xs text-white bg-red-500 rounded hover:bg-red-600"
+              (click)="deleteKafedra(kafedra.id)"
+            >
+              Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

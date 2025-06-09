@@ -5,7 +5,7 @@ export interface ISubject{
   name: string,
   type: string,
   longTime: number,
-  teacher: ITeacher,
+  teacher?: ITeacher,
 }
 
 export const SubjectData: ISubject[] = [

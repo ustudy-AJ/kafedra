@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
-import { TeacherComponent } from '../../components/teacher/teacher.component';
+import { TeacherComponent } from '../../../components/teacher/teacher.component';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
-import { IKafedra, KafedraData } from '../../mock-data/kafedra.mock';
+import { IKafedra, KafedraData } from '../../../mock-data/kafedra.mock';
 
 @Component({
   selector: 'app-kafedra',

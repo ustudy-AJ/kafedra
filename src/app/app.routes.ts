@@ -17,11 +17,23 @@ export const routes: Routes = [
       },
       {
         path: "kafedra/:id",
-        loadComponent: ()=> import("./pages/kafedra/kafedra.component")
+        loadComponent: ()=> import("./pages/kafedralar/kafedra/kafedra.component")
       },
       {
         path: "subject/:id",
-        loadComponent: ()=> import("./pages/subject/subject.component")
+        loadComponent: ()=> import("./pages/subjects/subject/subject.component")
+      },
+      {
+        path: "subjects",
+        loadComponent: ()=> import("./pages/subjects/subjects.component")
+      },
+      {
+        path: "teachers",
+        loadComponent: ()=> import("./pages/teachers/teachers.component")
+      },
+      {
+        path: "kafedralar",
+        loadComponent: ()=> import("./pages/kafedralar/kafedralar.component")
       }
     ]
   }
