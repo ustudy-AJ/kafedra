@@ -10,34 +10,16 @@ import { KafedraService } from './kafedra/kafedra.service';
   styleUrl: './kafedralar.component.scss'
 })
 export default class KafedralarComponent {
-  private service: KafedraService = inject(KafedraService);
+    private kafedraService: KafedraService = inject(KafedraService);
 
-  kafedras: IKafedra[] = [
-
-  ];
-
-  ngOnInit(){
-    console.log("dsa");
-
-    this.service.getkafedras().subscribe(v=>{
-      this.kafedras = this.service.kafedraMap(v);
-    })
-  }
+  kafedras: IKafedra[] = this.kafedraService.kafedraData;
 
   editKafedra(kafedra: IKafedra): void {
     console.log('Edit kafedra:', kafedra);
   }
 
   deleteKafedra(id: number): void {
-    this.service.delete(id).subscribe({
-      next: () => {
-        this.service.getkafedras().subscribe({
-          next: (response) => {
-            this.kafedras = this.service.kafedraMap(response);
-          }
-        });
-      }
-    });
+    this.kafedraService.deleteMock(id);
+    this.kafedras = this.kafedraService.kafedraData;
   }
-
 }

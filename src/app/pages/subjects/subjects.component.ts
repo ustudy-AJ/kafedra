@@ -10,40 +10,16 @@ import { SubjetService } from './subject/subject.service';
   styleUrl: './subjects.component.scss'
 })
 export default class SubjectsComponent {
-  private service: SubjetService = inject(SubjetService);
-  subjects: ISubject[] = [
-    // {
-    //   id: 1,
-    //   name: 'Mathematics',
-    //   type: 'Theoretical',
-    //   longTime: 90,
-    //   teacher: {
-    //     id: 101, fullName: 'Alice Johnson',
-    //     imgLink: ''
-    //   }
-    // },
-    // {
-    //   id: 2,
-    //   name: 'Chemistry Lab',
-    //   type: 'Practical',
-    //   longTime: 120,
-    //   // no teacher assigned
-    // }
-  ];
+  private subjectService: SubjetService = inject(SubjetService);
 
-  ngOnInit(){
-    console.log("dsa");
-
-    this.service.getSubjects().subscribe(v=>{
-      this.subjects = this.service.subjectMap(v);
-    })
-  }
+  subjects: ISubject[] = this.subjectService.subjectData;
 
   editSubject(subject: ISubject): void {
     console.log('Edit subject:', subject);
   }
 
   deleteSubject(id: number): void {
-    this.subjects = this.subjects.filter(s => s.id !== id);
+    this.subjectService.deleteSubject(id);
+    this.subjects = this.subjectService.subjectData;
   }
 }

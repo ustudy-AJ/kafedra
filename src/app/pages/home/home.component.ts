@@ -1,11 +1,13 @@
 import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { IKafedra, KafedraData } from '../../mock-data/kafedra.mock';
-import { ITeacher, TeachersData } from '../../mock-data/teacher.mock';
-import { ISubject, SubjectData } from '../../mock-data/subject.mock';
+import { IKafedra,  } from '../../mock-data/kafedra.mock';
+import { ITeacher } from '../../mock-data/teacher.mock';
+import { ISubject,  } from '../../mock-data/subject.mock';
 import { TeacherComponent } from '../../components/teacher/teacher.component';
 import { HomeService } from './home.service';
 import { TeacherService } from '../../components/teacher/teacher.service';
+import { SubjetService } from '../subjects/subject/subject.service';
+import { KafedraService } from '../kafedralar/kafedra/kafedra.service';
 
 @Component({
   selector: 'app-home',
@@ -16,14 +18,13 @@ import { TeacherService } from '../../components/teacher/teacher.service';
 export default class HomeComponent {
   private homeService: HomeService = inject(HomeService);
   private teacherService: TeacherService = inject(TeacherService);
+  private subjectService: SubjetService = inject(SubjetService);
+  private kafedraService: KafedraService = inject(KafedraService);
 
 
-  // kafedra: IKafedra[] = KafedraData;
-  // teachers: ITeacher[] = TeachersData;
-  // subjects: ISubject[] = SubjectData;
-  kafedra: IKafedra[] = [];
-  teachers: ITeacher[] = [];
-  subjects: ISubject[] = [];
+  kafedra: IKafedra[] = this.kafedraService.kafedraData;
+  teachers: ITeacher[] = this.teacherService.teachersData;
+  subjects: ISubject[] = this.subjectService.subjectData;
 
   kafedraLen: number = 4;
   teacherLen: number = 4;
@@ -37,17 +38,5 @@ export default class HomeComponent {
   }
   teacherLenChange(){
     this.teacherLen += 4;
-  }
-
-  ngOnInit(){
-    this.homeService.getSubjects().subscribe((subjectList:any)=>{
-
-      this.subjects =  this.homeService.subjectMap(subjectList);
-      console.log(this.subjects);
-    })
-
-    this.teacherService.getTeachers().subscribe(v=>{
-      this.teachers = this.teacherService.teacherMap(v);
-    })
   }
 }

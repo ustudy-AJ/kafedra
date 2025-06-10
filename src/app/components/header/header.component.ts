@@ -9,15 +9,4 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
-  countries: any[] | undefined;
-
-  selectedCountry: any | undefined = { name: 'O`z', code: 'UZ' };
-
-  ngOnInit() {
-      this.countries = [
-          { name: 'O`z', code: 'UZ' },
-          { name: 'Рус', code: 'RU' },
-          { name: 'Eng', code: 'US' },
-      ];
-  }
 }

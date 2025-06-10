@@ -11,22 +11,8 @@ import { TeacherService } from '../../components/teacher/teacher.service';
 })
 export default class TeachersComponent {
   private teacherService: TeacherService = inject(TeacherService);
-  teachers: ITeacher[] = [
-    {
-      id: 1, fullName: 'Alice Johnson',
-      imgLink: ''
-    },
-    {
-      id: 2, fullName: 'Bob Smith',
-      imgLink: ''
-    },
-  ];
+  teachers: ITeacher[] = this.teacherService.teachersData;
 
-  ngOnInit(){
-    this.teacherService.getTeachers().subscribe(v=>{
-      this.teachers =  this.teacherService.teacherMap(v);
-    })
-  }
 
   editTeacher(teacher: ITeacher): void {
 
@@ -34,5 +20,6 @@ export default class TeachersComponent {
 
   deleteTeacher(id: number): void {
     this.teacherService.delete(id);
+    this. teachers = this.teacherService.teachersData;
   }
 }

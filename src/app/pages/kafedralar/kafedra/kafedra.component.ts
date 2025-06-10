@@ -1,7 +1,8 @@
 import { Component, inject } from '@angular/core';
 import { TeacherComponent } from '../../../components/teacher/teacher.component';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
-import { IKafedra, KafedraData } from '../../../mock-data/kafedra.mock';
+import { IKafedra } from '../../../mock-data/kafedra.mock';
+import { KafedraService } from './kafedra.service';
 
 @Component({
   selector: 'app-kafedra',
@@ -14,11 +15,12 @@ export default class KafedraComponent {
 
   private activeRouter: ActivatedRoute = inject(ActivatedRoute);
   private router: Router = inject(Router);
+  private kafedraService: KafedraService = inject(KafedraService);
 
   ngOnInit(){
     let id = this.activeRouter.snapshot.params['id'];
 
-    this.kafedra = KafedraData.find((v) => v.id==id);
+    this.kafedra = this.kafedraService.kafedraData.find((v) => v.id==id);
     if(!this.kafedra){
       this.router.navigateByUrl("/home")
     }
