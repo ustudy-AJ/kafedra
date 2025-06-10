@@ -5,14 +5,14 @@ export const routes: Routes = [
   {
     path: "",
     pathMatch: "full",
-    redirectTo: "/home"
+    redirectTo: ""
   },
   {
     path: "",
     component: MainLayoutComponent,
     children: [
       {
-        path: "home",
+        path: "",
         loadComponent: ()=> import("./pages/home/home.component")
       },
       {
